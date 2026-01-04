@@ -9,6 +9,7 @@ permissions:
   contents: read
   pages: write
   id-token: write
+  deployments: write
 
 jobs:
   build-and-deploy:
@@ -40,5 +41,5 @@ jobs:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./dist
         destination_dir: .
-        keep_files: false
-        allow_empty_commit: false
+        cname: false
+        force_orphan: true
