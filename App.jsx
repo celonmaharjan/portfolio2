@@ -6,7 +6,7 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      <BrowserRouter>
+      <BrowserRouter basename={import.meta.env.PROD ? "/portfolio2" : ""}>
         <Routes>
           <Route path="/" element={<Portfolio />} />
         </Routes>
@@ -16,3 +16,4 @@ function App() {
 }
 
 export default App;
+
